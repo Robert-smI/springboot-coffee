@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.bykowski.springbootcaffe.entity.Place;
 import pl.bykowski.springbootcaffe.repo.PlaceRepo;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/place")
 public class PlaceApi {
@@ -22,5 +24,7 @@ public class PlaceApi {
     public Iterable<Place> showPlaces (){
        return placeRepo.findAll();
     }
+
+
 
 }

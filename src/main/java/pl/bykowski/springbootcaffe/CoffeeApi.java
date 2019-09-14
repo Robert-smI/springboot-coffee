@@ -5,8 +5,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.*;
 import pl.bykowski.springbootcaffe.entity.Coffee;
-import pl.bykowski.springbootcaffe.entity.Cup;
-import pl.bykowski.springbootcaffe.entity.Place;
 import pl.bykowski.springbootcaffe.repo.CoffeRepo;
 import pl.bykowski.springbootcaffe.repo.CupRepo;
 import pl.bykowski.springbootcaffe.repo.PlaceRepo;
@@ -39,15 +37,16 @@ public class CoffeeApi {
         return coffeRepo.findAll();
     }
 
+    @GetMapping("/coffee")
+    public Optional<Coffee> getCoffesById(@RequestParam Long id) {
+        return coffeRepo.findById(id);
+    }
+
     @PostMapping
     public void addCoffee(@RequestBody Coffee coffee) {
         coffeRepo.save(coffee);
     }
 
-//    @PostMapping
-//    public void addCup(@RequestBody Cup cup) {
-//        cupRepo.save(cup);
-//    }
 
 
     @DeleteMapping

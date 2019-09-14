@@ -1,5 +1,7 @@
 package pl.bykowski.springbootcaffe.entity;
 
+import org.springframework.context.annotation.Bean;
+
 import javax.persistence.*;
 import java.util.Set;
 
